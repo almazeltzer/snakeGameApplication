@@ -43,6 +43,11 @@ public class GameView extends View {
     @Override
     public void draw(@NonNull Canvas canvas) {
         super.draw(canvas);
-        for(int i=)
+        canvas.drawColor( 0XFF1A6100);
+        for(int i=0;i< arrGrass.size();i++)
+        {
+            canvas.drawBitmap(arrGrass.get(i).getBm(),arrGrass.get(i).getX(),arrGrass.get(i).getY(),null );
+        }
     }
+
 }
