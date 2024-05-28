@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
 public class GameView extends View {
@@ -49,22 +49,9 @@ public class GameView extends View {
             }
         }
         snake=new Snake(bmSnake,arrGrass.get(126).getX(),arrGrass.get(126).getY(),4);
-        handler = new Handler() {
-            @Override
-            public void publish(LogRecord record) {
 
-            }
 
-            @Override
-            public void flush() {
-
-            }
-
-            @Override
-            public void close() throws SecurityException {
-
-            }
-        };
+        handler=new Handler();
         r= new Runnable() {
             @Override
             public void run() {
@@ -128,7 +115,7 @@ public class GameView extends View {
         }
         snake.update();
         snake.draw(canvas);
-
+        handler.postDelayed(r, 100);
     }
 
 }
