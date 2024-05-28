@@ -50,7 +50,7 @@ public class PartSnake {
     }
 
     public Rect getrTop() {
-        return new Rect(this.x,this.y-10*Constants.SCREEN_HEIGHT/1920,this.x+GameView.sizeOfMap,this.y;
+        return new Rect(this.x,this.y-10*Constants.SCREEN_HEIGHT/1920,this.x+GameView.sizeOfMap,this.y);
     }
     public void setrTop(Rect rTop) {
         this.rTop = rTop;
