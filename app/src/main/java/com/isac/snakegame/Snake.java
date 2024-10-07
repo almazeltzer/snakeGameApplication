@@ -306,4 +306,17 @@ public class Snake {
         this.move_right=false;
     }
 
+    public void addPart() {
+        PartSnake p=this.arrayPartsSnake.get(length-1);
+        this.length+=1;
+        if(p.getBm()==bm_tail_right){
+            this.arrayPartsSnake.add(new PartSnake(bm_tail_right,p.getX() -GameView.sizeOfMap, p.getY()));
+        }else if(p.getBm()==bm_tail_left){
+            this.arrayPartsSnake.add(new PartSnake(bm_tail_left,p.getX() +GameView.sizeOfMap, p.getY()));
+        }else if(p.getBm()==bm_tail_up){
+            this.arrayPartsSnake.add(new PartSnake(bm_tail_up,p.getX(), p.getY()+GameView.sizeOfMap));
+        }else if(p.getBm()==bm_tail_down){
+            this.arrayPartsSnake.add(new PartSnake(bm_tail_right,p.getX(), p.getY()-GameView.sizeOfMap));
+        }
+    }
 }

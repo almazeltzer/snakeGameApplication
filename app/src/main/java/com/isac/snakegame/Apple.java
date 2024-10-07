@@ -1,6 +1,7 @@
 package com.isac.snakegame;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Rect;
 
 public class Apple {
@@ -43,5 +44,15 @@ public class Apple {
 
     public void setR(Rect r) {
         this.r = r;
+    }
+
+    public void draw(Canvas canvas) {
+        canvas.drawBitmap(bm,x,y,null);
+    }
+
+    public void reset(int nx,int ny) {
+        this.x=nx;
+        this.y=ny;
+
     }
 }

@@ -120,6 +120,12 @@ public class GameView extends View {
         }
         snake.update();
         snake.draw(canvas);
+        apple.draw(canvas);
+        if(snake.getArrayPartsSnake().get(0).getrBody().intersect(apple.getR())){
+            randomApple();
+            apple.reset(arrGrass.get(randomApple()[0].getX(),arrGrass.get(randomApple()[1]).getY()));
+            snake.addPart();
+        }
         handler.postDelayed(r, 100);
     }
 
